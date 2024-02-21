@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz dla studentów</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="formularz.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet">
+</head>
+<body onload="updateStudentsList()">
+<main>
+    <form id="studentForm">
+        <h2>Complete the form</h2>
+        <label>
+            Name:<input type="text" id="name" placeholder="First name and Last name" required>
+        </label>
+
+        <label>
+            ID:<input inputmode="numeric" oninput="this.value = this.value.replace(/\D+/g, '')" maxlength="5" id="album"
+                      placeholder="Number of album" required>
+        </label>
+
+        <label>
+            Test 1:<input type="number" inputmode="numeric" oninput="this.value = this.value.replace(/\D+/g, '')"
+                          id="test1" min="0" max="6" placeholder="Grade from the test 1" required>
+        </label>
+
+        <label>
+            Test 2:<input type="number" inputmode="numeric" oninput="this.value = this.value.replace(/\D+/g, '')"
+                          id="test2" min="0" max="6" placeholder="Grade from the test 2" required>
+        </label>
+
+        <label>
+            Test 3:<input type="number" inputmode="numeric" oninput="this.value = this.value.replace(/\D+/g, '')"
+                          id="test3" min="0" max="6" placeholder="Grade from the test 3" required>
+        </label>
+
+        <button type="button" onclick="addStudent()">Add Student</button>
+    </form>
+</main>
+
+<h2>Average Grade: <span id="averageGrade">-</span></h2>
+
+<h2>Students Information:</h2>
+<ul id="studentsList"></ul>
+
+</body>
+</html>
